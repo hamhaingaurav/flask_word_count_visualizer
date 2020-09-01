@@ -24,7 +24,20 @@ $(document).ready(function() {
 
         generateChart(word_counts)
 
-        console.log(word_counts)
+        $.ajax({
+            url: '/save_text',
+            type: 'POST',
+            dataType: 'json',
+            data: {text: text},
+            success:function(data){
+                console.log('Successfully Submitted');
+            },
+            error:function(){
+                console.log('Failed')
+            }
+        })
+
+        // console.log(word_counts)
     });
 
 });
