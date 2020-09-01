@@ -1,4 +1,4 @@
-# js_word_count_visualizer
+# flask_word_count_visualizer
 This is a word count visualizer a flask application using jQuery and Chart.js.
 
 To run this project -
