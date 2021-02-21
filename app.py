@@ -25,14 +25,8 @@ def home():
 @app.route('/save_text', methods=['POST'])
 def save_text():
     if request.method == 'POST':
-        input_text = InputText()
-        input_text.text = request.form['text']
+        input_text = InputText(text=request.form['text'])
         db.session.add(input_text)
         db.session.commit()
         return jsonify({'status':200})
     return jsonify({'status': 500})
-
-
-if __name__ == '__main__':
-    db.create_all()
-    app.run(debug=True)
